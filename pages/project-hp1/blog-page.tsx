@@ -15,13 +15,10 @@ export const getStaticProps = async () => {
   };
 };
 
-const Blog = ({ posts }: BlogStaticProps) => {
-  const a = 'a';
-  return (
-    <Layout title="Blog">
-      <ul>{posts && posts.map((post) => <Post key={post.id} post={post} />)}</ul>
-    </Layout>
-  );
-};
+const Blog = ({ posts }: BlogStaticProps) => (
+  <Layout title="Blog">
+    <ul className="m-10">{posts && posts.map((post) => <Post key={post.id} post={post} />)}</ul>
+  </Layout>
+);
 
 export default Blog;
