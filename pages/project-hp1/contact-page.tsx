@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Layout from '../../components/Layout';
+import Layout from '../../components/project1/Layout';
 
 const Contact = () => (
   <Layout title="Contact">

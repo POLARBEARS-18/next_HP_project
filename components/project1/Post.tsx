@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PostType } from '../lib/posts';
+import { PostType } from '../../lib/project-hp1/posts';
 
 export interface PostProps {
   post: PostType;

@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 
-interface LayoutProps {
+interface Project1LayoutProps {
   children: ReactNode;
   title: string;
 }
 
-const Layout: FC<LayoutProps> = ({ children, title = 'HP by Nextjs' }) => (
+const Layout: FC<Project1LayoutProps> = ({ children, title = 'HP by Nextjs' }) => (
   <div className="flex justify-center items-center flex-col min-h-screen text-gray-600 text-sm font-mono">
     <Head>
       <title>{title}</title>

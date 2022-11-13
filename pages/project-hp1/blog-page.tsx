@@ -1,6 +1,6 @@
-import Layout from '../../components/Layout';
-import Post from '../../components/Post';
-import { getAllPostsData, PostType } from '../../lib/posts';
+import Layout from '../../components/project1/Layout';
+import Posts from '../../components/project1/Post';
+import { getAllPostsData, PostType } from '../../lib/project-hp1/posts';
 
 interface BlogStaticProps {
   posts: PostType[];
@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
 
 const Blog = ({ posts }: BlogStaticProps) => (
   <Layout title="Blog">
-    <ul className="m-10">{posts && posts.map((post) => <Post key={post.id} post={post} />)}</ul>
+    <ul className="m-10">{posts && posts.map((post) => <Posts key={post.id} post={post} />)}</ul>
   </Layout>
 );
 

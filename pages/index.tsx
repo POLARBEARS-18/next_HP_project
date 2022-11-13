@@ -1,8 +1,9 @@
-import Layout from '../components/Layout';
+import Auth from '../components/project-hp2/Auth';
+import Layout from '../components/project-hp2/Layout';
 
 const Home = () => (
-  <Layout title="Home">
-    <p className="text-4xl">Welecom to Next</p>
+  <Layout title="Login">
+    <Auth />
   </Layout>
 );
 

@@ -15,7 +15,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": 13,
     "sourceType": "module",
     // "tsconfigRootDir": "__dirname", //追加 tsconfig.jsonがある相対パスを指定
     "project": ["./tsconfig.json"] //追加  tsconfig.jsonを指定
@@ -93,7 +93,10 @@
 
     "react/require-default-props": "off",
 
-    "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": { "attributes": false } }]
+    "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": { "attributes": false } }],
+
+    // アラートを許可する
+    "no-alert": 0
   },
   "settings": {
     "import/resolver": {
