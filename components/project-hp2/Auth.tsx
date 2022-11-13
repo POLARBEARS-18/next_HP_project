@@ -45,12 +45,11 @@ const Auth = () => {
 
   const authUser = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    assertIsDefined(apiBaseUrl);
     if (isLogin) {
       void login();
     } else {
       try {
-        assertIsDefined(apiBaseUrl);
-
         await fetch(`${apiBaseUrl}api/register/`, {
           method: 'POST',
           body: JSON.stringify({ username, password }),
