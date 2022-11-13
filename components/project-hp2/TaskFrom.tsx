@@ -2,7 +2,6 @@ import { FC, FormEvent, useContext } from 'react';
 import { KeyedMutator } from 'swr';
 import Cookies from 'universal-cookie';
 import { StateContext } from '../../context/StateContext';
-import { assertIsDefined } from '../../helpers/assert';
 import { Project2TaskType } from '../../lib/project-hp2/tasks';
 
 interface TaskFromProps {
@@ -16,7 +15,6 @@ const TaskFrom: FC<TaskFromProps> = ({ taskCreated }) => {
   const { selectedTask, setSelectedTask } = useContext(StateContext);
 
   const create = async (e: FormEvent<HTMLFormElement>) => {
-    assertIsDefined(apiBaseUrl);
     const getCookie = cookie.get('access_token') as string;
 
     e.preventDefault();
@@ -37,7 +35,6 @@ const TaskFrom: FC<TaskFromProps> = ({ taskCreated }) => {
   };
 
   const update = async (e: FormEvent<HTMLFormElement>) => {
-    assertIsDefined(apiBaseUrl);
     const getCookie = cookie.get('access_token') as string;
 
     e.preventDefault();

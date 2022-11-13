@@ -3,7 +3,6 @@ import { FC, useContext } from 'react';
 import { KeyedMutator } from 'swr';
 import Cookies from 'universal-cookie';
 import { StateContext } from '../../context/StateContext';
-import { assertIsDefined } from '../../helpers/assert';
 import { Project2TaskType } from '../../lib/project-hp2/tasks';
 
 export interface TaskProps {
@@ -17,7 +16,6 @@ const apiBaseUrl = process.env.NEXT_PUBLIC_RESTAPI_URL;
 const Task: FC<TaskProps> = ({ task, taskDeleted }) => {
   const { setSelectedTask } = useContext(StateContext);
   const deleteTask = async () => {
-    assertIsDefined(apiBaseUrl);
     const getCookie = cookie.get('access_token') as string;
 
     await fetch(`${apiBaseUrl}api/tasks/${task.id}`, {

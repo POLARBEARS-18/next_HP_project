@@ -1,4 +1,3 @@
-import { assertIsDefined } from '../../helpers/assert';
 import postJson from './posts.json';
 
 export type Project2PostType = typeof postJson;
@@ -11,8 +10,6 @@ export const getAllPostsData = async () => {
   return filteredPosts;
 };
 export const getAllPostIds = async () => {
-  assertIsDefined(apiBaseUrl);
-
   const res = await fetch(new URL(`${apiBaseUrl}api/list-post/`));
   const posts = (await res.json()) as Project2PostType[];
 
@@ -24,8 +21,6 @@ export const getAllPostIds = async () => {
 };
 
 export const getPostData = async (id: number) => {
-  assertIsDefined(apiBaseUrl);
-
   const res = await fetch(new URL(`${apiBaseUrl}api/detail-post/${id}/`));
   const post = (await res.json()) as Project2PostType;
 

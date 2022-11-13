@@ -2,7 +2,6 @@ import { LockClosedIcon } from '@heroicons/react/20/solid';
 import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
 import Cookies from 'universal-cookie';
-import { assertIsDefined } from '../../helpers/assert';
 import { PostAuthJWTCreate } from '../../types/types';
 
 const cookie = new Cookies();
@@ -16,8 +15,6 @@ const Auth = () => {
 
   const login = async () => {
     try {
-      assertIsDefined(apiBaseUrl);
-
       await fetch(`${apiBaseUrl}api/auth/jwt/create/`, {
         method: 'POST',
         body: JSON.stringify({ username, password }),
@@ -45,7 +42,6 @@ const Auth = () => {
 
   const authUser = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    assertIsDefined(apiBaseUrl);
     if (isLogin) {
       void login();
     } else {

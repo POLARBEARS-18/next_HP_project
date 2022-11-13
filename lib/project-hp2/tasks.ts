@@ -1,11 +1,9 @@
-import { assertIsDefined } from '../../helpers/assert';
 import taskJson from './tasks.json';
 
 export type Project2TaskType = typeof taskJson;
 const apiBaseUrl = process.env.NEXT_PUBLIC_RESTAPI_URL;
 
 export const getAllTaskData = async () => {
-  assertIsDefined(apiBaseUrl);
   const res = await fetch(new URL(`${apiBaseUrl}api/list-task/`));
   const tasks = (await res.json()) as Project2TaskType[];
   const staticFilteredTasks = tasks.sort((a, b) => new Date(b.created_at).valueOf() - new Date(a.created_at).valueOf());
@@ -14,8 +12,6 @@ export const getAllTaskData = async () => {
 };
 
 export const getAllTaskIds = async () => {
-  assertIsDefined(apiBaseUrl);
-
   const res = await fetch(new URL(`${apiBaseUrl}api/list-task/`));
   const tasks = (await res.json()) as Project2TaskType[];
 
@@ -27,8 +23,6 @@ export const getAllTaskIds = async () => {
 };
 
 export const getTaskData = async (id: number) => {
-  assertIsDefined(apiBaseUrl);
-
   const res = await fetch(new URL(`${apiBaseUrl}api/detail-task/${id}/`));
   const task = (await res.json()) as Project2TaskType;
 
